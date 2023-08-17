@@ -1,0 +1,27 @@
+import PropTypes from "prop-types";
+import React from 'react';
+import image from "./images/lizaed_1.jpg";
+import image from "./images/lizaed_2.jpg";
+
+
+const App = () => (
+    <ProjectCard image={image} />
+);
+
+const ProjectCard = (props) => {
+    return (
+        <div>
+            <img src={props.image} />
+            <h1>{props.title}</h1>
+            <p>{props.subtitle}</p>
+        </div>
+    )
+}
+
+ProjectCard.propTypes =  {
+    image: PropTypes.string,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+};
+
+export default ProjectCard 
