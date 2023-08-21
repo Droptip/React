@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const Product = ({category, name, price}) => {
     return (
@@ -9,5 +10,11 @@ const Product = ({category, name, price}) => {
         </div>
     );
 };
+
+Product.propTypes = {
+    category: string,
+    name: string,
+    price: number,
+}
 
 export default Product;
