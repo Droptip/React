@@ -1,0 +1,15 @@
+.Hero {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.Hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.Hero h2 {
+    font-size: 24px;
+}
