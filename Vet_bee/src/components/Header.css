@@ -1,0 +1,37 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdfcfa;
+    padding: 10px 10px;
+    color: #fff;
+  }
+  
+  .header-logo img {
+    max-width: 100px;
+  }
+  
+  .header-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header-links a {
+    text-decoration: none;
+    color: #EC7625;
+    margin-left: 20px;
+    font-size: 32px;
+    font-weight: 600;
+    margin-right: 3rem;
+  }
+  
+  
+  .header h1 {
+    color: rgb(46, 150, 136);
+    font-size: 2rem;
+    text-align: left;
+    margin-right: 50rem;
+    position: relative;
+  }
