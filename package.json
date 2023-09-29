@@ -3,6 +3,9 @@
     "sass": "^1.66.1"
   },
   "dependencies": {
-    "react-router-dom": "^6.15.0"
+    "global": "^4.4.0",
+    "react-icons": "^4.11.0",
+    "react-router-dom": "^6.15.0",
+    "yarn": "^1.22.19"
   }
 }

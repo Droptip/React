@@ -1,0 +1,32 @@
+import PropTypes from "prop-types";
+
+
+const ListCard = (props) => {
+
+    return (
+        <div className={styles.cardCointainer}>
+            <div className={styles.left}>
+                <p className={styles.name}>{props.name}</p>
+                <p>{props.email}</p>
+            </div>
+            <div className={styles.right}>
+                    <LogsBtn
+                        Btntext="View Log"
+                        petId={props.petId}
+                        key={props.petId}
+                    />
+                <LGreenBtn
+                    Btntext="Delete"
+                />
+            </div>
+        </div>
+    )
+}
+
+export default ListCard;
+
+ListCard.propTypes = {
+    name: PropTypes.string,
+    email: PropTypes.string,
+    petId: PropTypes.number,
+}

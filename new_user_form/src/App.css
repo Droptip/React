@@ -1,0 +1,58 @@
+/* Styling for the registration form container */
+.registration-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height as needed */
+}
+
+/* Styling for the content inside the form container */
+.registration-form-content {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the image on the left */
+.registration-form-image {
+  flex: 1; /* Takes up 1/2 of the available space */
+  padding: 20px; /* Add padding as needed */
+}
+
+/* Styling for the form fields on the right */
+.registration-form-fields {
+  flex: 1; /* Takes up 1/2 of the available space */
+  padding: 20px; /* Add padding as needed */
+}
+
+/* Additional styling for form fields, labels, and button */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Center the "Register" heading */
+h2 {
+  text-align: center;
+}

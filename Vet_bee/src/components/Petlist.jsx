@@ -1,73 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import "./Petlist.css"
+import { useEffect, useState } from 'react';
 
-const Petlist = () => {
+function Petlist() {
   const [pets, setPets] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
 
   useEffect(() => {
-    fetch('/v1/pets/')
-      .then(response => response.json())
-      .then(data => {
-        setPets(data);
-        setIsLoading(false);
-      })
-      .catch(error => {
-        console.error('Error fetching pets:', error);
-        setIsLoading(false);
-      });
-  }, []); 
+    fetch("https://glittery-dull-snickerdoodle.glitch.me/v1/pets")
+      .then((response) => response.json())
+      .then((data) => setPets(data))
+      .catch((error) => console.error("Error fetching pets:", error));
+  }, []);
 
-  
-  const archivePet = (petId) => {
-   
-    fetch(`/v1/pets/${petId}`, {
-      method: 'DELETE',
-    })
-      .then(response => {
-        if (response.status === 50) {
-          
-          setPets(pets.filter(pet => pet.id !== petId));
-        } else {
-          console.error('Failed to archive pet. Status code:', response.status);
-        }
-      })
-      .catch(error => {
-        console.error('Error archiving pet:', error);
-      });
+  const handleViewLog = (email) => {
+    alert(`View log for ${email}`);
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const handleDelete = (petToDelete) => {
+    setPets((prevPets) => prevPets.filter((pet) => pet !== petToDelete));
+  };
 
   return (
-    <div>
-      <h1>Pet List</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Date of Birth</th>
-            <th>Client Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pets.map(pet => (
-            <tr key={pet.id}>
-              <td>{pet.name}</td>
-              <td>{pet.dob}</td>
-              <td>{pet.client_email}</td>
-              <td>
-                <button onClick={() => archivePet(pet.id)}>Archive</button>
-                <button onClick={() => viewHealthLog(pet.id)}>View Log</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className='card-container'>
+      {pets.map((pet) => (
+        <div key={pet.email} className="card">
+          <p>Name: {pet.name}</p>
+          <p>Date of Birth: {pet.dob}</p>
+          <p>Email: {pet.client_email}</p>
+          <button onClick={() => handleViewLog(pet.email)}>View Log</button>
+          <button onClick={() => handleDelete(pet)}>Delete</button>
+        </div>
+      ))}
     </div>
   );
-};
+}
 
 export default Petlist;
