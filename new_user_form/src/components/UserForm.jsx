@@ -9,8 +9,10 @@ const validationSchema = Yup.object({
   password: Yup.string().required("Password is required"),
 });
 
-const FormComponent = () => {
-  const handleSubmit = (values) => {};
+const UserForm = () => {
+  const handleSubmit = (values) => {
+    // Handle form submission here
+  };
 
   return (
     <Formik
@@ -34,10 +36,10 @@ const FormComponent = () => {
           <Field type="password" id="password" name="password" />
           <ErrorMessage name="password" component="div" />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit-button">Submit</button>
       </Form>
     </Formik>
   );
 };
 
-export default FormComponent;
+export default UserForm;
